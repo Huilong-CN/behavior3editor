@@ -16,7 +16,7 @@ b3e.editor.ImportManager = function (editor) {
   this.addTreeAsData = function (data) {
     var project = editor.project.get();
     if (!project) return;
-    console.log("addTreeAsData", data.id, data.title)
+    console.log(data);
     var tree = project.trees.add(data.id);
   };
 
