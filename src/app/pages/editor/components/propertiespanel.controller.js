@@ -31,7 +31,7 @@
       if (s.length === 1) {
         vm.original = s[0];
         for (var key in vm.original.properties) {
-          console.log(typeof vm.original.properties[key], vm.original.properties[key])
+          // console.log(typeof vm.original.properties[key], vm.original.properties[key])
           if (typeof vm.original.properties[key] != 'string') {
             vm.original.properties[key] = vm.original.properties[key].toString()
           }
