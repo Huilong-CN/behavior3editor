@@ -83,6 +83,11 @@ b3e.editor.ExportManager = function (editor) {
 
     tree.blocks.each(function (block) {
       if (block.category !== 'root') {
+        for (var key in block.properties) {
+          if (typeof block.properties[key] != 'string') {
+            block.properties[key] = block.properties[key].toString()
+          }
+        }
         var d = {
           id: block.id,
           name: block.name,
