@@ -6,7 +6,13 @@
   "license": "MIT",
   "bugs": "https://github.com/behavior3/behavior3editor/issues",
   "repository": "github:behavior3/behavior3editor",
+  "scripts": {
+    "build": "gulp build",
+    "serve": "gulp serve",
+    "postinstall": "bower install"
+  },
   "devDependencies": {
+    "bower": "^1.8.12",
     "electron-packager": "^5.1.1",
     "electron-prebuilt": "^0.33.8",
     "gulp": "~3.9.0",
