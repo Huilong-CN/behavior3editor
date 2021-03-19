@@ -25,5 +25,8 @@
     "merge-stream": "~1.0.0",
     "rimraf": "^2.4.3"
   },
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
+  },
   "dependencies": {}
 }
