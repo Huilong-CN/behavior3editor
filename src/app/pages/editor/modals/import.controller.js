@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -16,18 +16,18 @@
   ];
 
   function ImportController($scope,
-                            $window,
-                            $state,
-                            $stateParams,
-                            dialogService,
-                            notificationService,
-                            storageService) {
+    $window,
+    $state,
+    $stateParams,
+    dialogService,
+    notificationService,
+    storageService) {
     var vm = this;
-    vm.type         = null;
-    vm.format       = null;
-    vm.open         = open;
+    vm.type = null;
+    vm.format = null;
+    vm.open = open;
     vm.loadFromFile = loadFromFile;
-    vm.data         = '';
+    vm.data = '';
 
     _active();
 
@@ -39,10 +39,10 @@
     function loadFromFile() {
       dialogService
         .openFile(false, ['.b3', '.json'])
-        .then(function(path) {
+        .then(function (path) {
           storageService
             .loadAsync(path)
-            .then(function(data) {
+            .then(function (data) {
               vm.data = JSON3.stringify(data, null, 2);
             });
         });
@@ -62,10 +62,11 @@
         else if (vm.type === 'nodes' && vm.format === 'json') {
           i.nodesAsData(data);
         }
-      } catch(e) {
+      } catch (e) {
         notificationService.error(
           'Invalid data',
-          'The provided data is invalid.'
+          'The provided data is invalid.',
+          e
         );
       }
 

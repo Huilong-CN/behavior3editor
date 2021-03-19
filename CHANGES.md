@@ -1,3 +1,10 @@
+## TreeFloderStructure分支
+- 修改节点控件为TreeControl，方便折叠，工程较大时方便归类和查找
+- 目前没有合并到master
+## 0.4.0
+- subtree支持。
+- 节点过滤。
+- desktop支持工程序列号到标准json，读取工程文件改写path字段。
 
 ## Version 0.3.0 [NEXT]
 
