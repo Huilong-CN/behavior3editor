@@ -80,7 +80,7 @@
       Mousetrap.bind('ctrl+v', onPaste);
       Mousetrap.bind('ctrl+x', onCut);
       Mousetrap.bind('ctrl+d', onDuplicate);
-      Mousetrap.bind('del', onRemove);
+      Mousetrap.bind(["del", "backspace"], onRemove);
       Mousetrap.bind('a', onAutoOrganize);
       Mousetrap.bind('ctrl+a', onSelectAll);
       Mousetrap.bind('ctrl+shift+a', onDeselectAll);
@@ -95,7 +95,7 @@
       Mousetrap.unbind('ctrl+v', onPaste);
       Mousetrap.unbind('ctrl+x', onCut);
       Mousetrap.unbind('ctrl+d', onDuplicate);
-      Mousetrap.unbind('del', onRemove);
+      Mousetrap.unbind(["del", "backspace"], onRemove);
       Mousetrap.unbind('a', onAutoOrganize);
       Mousetrap.unbind('ctrl+a', onSelectAll);
       Mousetrap.unbind('ctrl+shift+a', onDeselectAll);
