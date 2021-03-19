@@ -84,7 +84,7 @@ b3e.editor.ExportManager = function (editor) {
     tree.blocks.each(function (block) {
       if (block.category !== 'root') {
         for (var key in block.properties) {
-          if (typeof block.properties[key] != 'string') {
+          if (typeof block.properties[key] != 'string' && block.properties[key] !== undefined) {
             block.properties[key] = block.properties[key].toString()
           }
         }
@@ -121,7 +121,7 @@ b3e.editor.ExportManager = function (editor) {
       if (!node.isDefault) {
         for (var key in node.properties) {
           // console.log(typeof node.properties[key], node.properties[key])
-          if (typeof node.properties[key] != 'string') {
+          if (typeof node.properties[key] != 'string' && node.properties[key] !== undefined) {
             node.properties[key] = node.properties[key].toString()
           }
         }
