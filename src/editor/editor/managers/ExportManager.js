@@ -3,9 +3,9 @@ b3e.editor.ExportManager = function (editor) {
 
   function getBlockChildrenIds(block) {
     var conns = block._outConnections.slice(0);
-    // conns.forEach(c => {
-    //   console.log(c)
-    // });
+    conns.forEach(c => {
+      console.log("slice0", c)
+    });
     if (editor._settings.get('layout') === 'horizontal') {
       conns.sort(function (a, b) {
         if (!a._outBlock.y) {
@@ -14,7 +14,7 @@ b3e.editor.ExportManager = function (editor) {
         }
         if (!b._outBlock.y) {
           // console.log(b)
-          console.log("b is null", a)
+          console.log("b is null", b)
           b._outBlock.y = 0
         }
         return a._outBlock.y -
@@ -22,12 +22,13 @@ b3e.editor.ExportManager = function (editor) {
       });
     } else {
       conns.sort(function (a, b) {
-        if (a._outBlock.y == null) {
-          console.log(a)
+        if (!a._outBlock.y) {
+          console.log("a is null", a)
           a._outBlock.y = 0
         }
-        if (b._outBlock.y == null) {
-          console.log(b)
+        if (!b._outBlock.y) {
+          // console.log(b)
+          console.log("b is null", b)
           b._outBlock.y = 0
         }
         return a._outBlock.x -
@@ -78,7 +79,7 @@ b3e.editor.ExportManager = function (editor) {
     }
 
     var root = tree.blocks.getRoot();
-    console.log(root.name)
+    console.log("exporting tree", tree.title)
     var first = getBlockChildrenIds(root);
     var data = {
       version: b3e.VERSION,
