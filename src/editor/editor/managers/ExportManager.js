@@ -3,6 +3,9 @@ b3e.editor.ExportManager = function (editor) {
 
   function getBlockChildrenIds(block) {
     var conns = block._outConnections.slice(0);
+    conns.forEach(c => {
+      console.log(c)
+    });
     if (editor._settings.get('layout') === 'horizontal') {
       conns.sort(function (a, b) {
         if (a._outBlock.y == null) {
@@ -74,6 +77,7 @@ b3e.editor.ExportManager = function (editor) {
     }
 
     var root = tree.blocks.getRoot();
+    console.log(root.name)
     var first = getBlockChildrenIds(root);
     var data = {
       version: b3e.VERSION,
