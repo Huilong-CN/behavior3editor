@@ -16,9 +16,9 @@ b3e.editor.ExportManager = function (editor) {
     var i = conns.length;
     while (i--) {
       if (!conns[i]._outBlock) {
-        onsole.log("remove connection:", conns[i])
+        console.log("remove connection:", conns[i])
         if (conns[i]._inBlock) {
-          onsole.log("remove connection:", conns[i]._inBlock.name, conns[i]._inBlock.title, conns[i]._inBlock.description)
+          console.log("remove connection:", conns[i]._inBlock.name, conns[i]._inBlock.title, conns[i]._inBlock.description)
         }
         conns.splice(i, 1);
       }
