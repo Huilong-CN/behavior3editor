@@ -8,39 +8,18 @@ b3e.editor.ExportManager = function (editor) {
     // });
     var len = conns.length;
     for (var i = 0; i < len; i++) {
-      // console.log(i + "=" + arr[i]);
-      //删除掉所有为2的元素
       if (!conns[i]._outBlock) {
-        console.log("remove connection:".conns[i])
-        //注意对比这行代码：删除元素后调整i的值
+        console.log("remove connection:", conns[i])
         conns.splice(i--, 1);
       }
     }
     if (editor._settings.get('layout') === 'horizontal') {
       conns.sort(function (a, b) {
-        if (!a._outBlock) {
-          console.log("a is null", a)
-          a._outBlock.y = 0
-        }
-        if (!b._outBlock) {
-          // console.log(b)
-          console.log("b is null", b)
-          b._outBlock.y = 0
-        }
         return a._outBlock.y -
           b._outBlock.y;
       });
     } else {
       conns.sort(function (a, b) {
-        if (!a._outBlock) {
-          console.log("a is null", a)
-          a._outBlock.y = 0
-        }
-        if (!b._outBlock) {
-          // console.log(b)
-          console.log("b is null", b)
-          b._outBlock.y = 0
-        }
         return a._outBlock.x -
           b._outBlock.x;
       });
