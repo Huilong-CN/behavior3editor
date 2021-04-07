@@ -6,11 +6,21 @@ b3e.editor.ExportManager = function (editor) {
     // conns.forEach(c => {
     //   console.log("slice0", c.name, c.title)
     // });
-    var len = conns.length;
-    for (var i = 0; i < len; i++) {
+    // var len = conns.length;
+    // for (var i = 0; i < len; i++) {
+    //   if (!conns[i]._outBlock) {
+    //     console.log("remove connection:", conns[i])
+    //     conns.splice(i--, 1);
+    //   }
+    // }
+    var i = conns.length;
+    while (i--) {
       if (!conns[i]._outBlock) {
-        console.log("remove connection:", conns[i])
-        conns.splice(i--, 1);
+        onsole.log("remove connection:", conns[i])
+        if (conns[i]._inBlock) {
+          onsole.log("remove connection:", conns[i]._inBlock.name, conns[i]._inBlock.title, conns[i]._inBlock.description)
+        }
+        conns.splice(i, 1);
       }
     }
     if (editor._settings.get('layout') === 'horizontal') {
