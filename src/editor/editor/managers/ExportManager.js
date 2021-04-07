@@ -5,11 +5,27 @@ b3e.editor.ExportManager = function (editor) {
     var conns = block._outConnections.slice(0);
     if (editor._settings.get('layout') === 'horizontal') {
       conns.sort(function (a, b) {
+        if (a._outBlock.y == null) {
+          console.log(a)
+          a._outBlock.y = 0
+        }
+        if (b._outBlock.y == null) {
+          console.log(b)
+          b._outBlock.y = 0
+        }
         return a._outBlock.y -
           b._outBlock.y;
       });
     } else {
       conns.sort(function (a, b) {
+        if (a._outBlock.y == null) {
+          console.log(a)
+          a._outBlock.y = 0
+        }
+        if (b._outBlock.y == null) {
+          console.log(b)
+          b._outBlock.y = 0
+        }
         return a._outBlock.x -
           b._outBlock.x;
       });
